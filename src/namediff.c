@@ -125,5 +125,5 @@ int diffweight(const char *na,const char *nb)
 			}
 		}
 	}
-	return matrix[n-1][m-1];
+	return matrix[a-1][b-1];
 }
