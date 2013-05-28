@@ -106,7 +106,7 @@ int diffweight(const char *na,const char *nb)
 	int j;
 	for(i = 0 ; i < a ; i ++)
 	{
-		memset(matrix[i],0,m*sizeof(int));
+		memset(matrix[i],0,b*sizeof(int));
 		matrix[i][0] = i;
 	}
 	for(i = 0 ; i < b;i++) matrix[0][i] = i;

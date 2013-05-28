@@ -4,7 +4,7 @@
 
 #define _MIN(x,y,z) ((x<y)?((x<z)?x:z):((y<z)?y:z))
 #define MAX2(a,b) (a>b?a:b)
-
+#define MIN2(a,b) (a>b?b:a)
 
 #define isch(x) ((x>='a'&&x<='z')||(x>='A'&&x<='Z'))
 
@@ -106,7 +106,7 @@ int diffweight(const char *na,const char *nb)
 	int j;
 	for(i = 0 ; i < a ; i ++)
 	{
-		memset(matrix[i],0,m*sizeof(int));
+		memset(matrix[i],0,b*sizeof(int));
 		matrix[i][0] = i;
 	}
 	for(i = 0 ; i < b;i++) matrix[0][i] = i;
