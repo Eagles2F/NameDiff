@@ -28,7 +28,7 @@ NameInfo nameparse(const char *str)
 	
 	for(i=0;i<len;i++)
 	{
-		if(isch(str[i])||x=='-')
+		if(isch(str[i])||(str[i] =='-'))
 		{
 			if(x=='-') continue;
 			ni.part[ni.len][j] = lowcase(str[i]);
