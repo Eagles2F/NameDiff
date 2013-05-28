@@ -2,6 +2,9 @@
 #include <string.h>
 #include <stdio.h>
 
+#define _MIN(x,y,z) ((x<y)?((x<z)?x:z):((y<z)?y:z))
+#define MAX2(a,b) (a>b?a:b)
+
 
 #define isch(x) ((x>='a'&&x<='z')||(x>='A'&&x<='Z'))
 
