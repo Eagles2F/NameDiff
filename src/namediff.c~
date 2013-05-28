@@ -1,5 +1,6 @@
 #include "namediff.h"
 #include <string.h>
+#include <stdio.h>
 
 #define isch(x) ((x>='a'&&x<='z')||(x>='A'&&x<='Z'))
 

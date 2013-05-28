@@ -24,7 +24,7 @@ NameInfo nameparse(const char *str)
 	{
 		if(isch(str[i]))
 		{
-			ni[len][j] = str[i];
+			ni.part[len][j] = str[i];
 			j++;
 		}else if(j>0)
 		{
