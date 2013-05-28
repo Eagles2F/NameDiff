@@ -93,8 +93,8 @@ int nifsame(NameInfo a,int offa,NameInfo b,int offb)
 	int th = (la > lb ? lb : la) * 0.2;
 	int ed ;
 	if((ed = editDistanceT(s1,la,s2,lb,th)) == -1) return 0;
-	else if(ed == 0 ) return 2;
-	else return 1;
+	else if(ed == 0 ) return 1; // absolutely same
+	else return 2; // some difference
 }
 
 
@@ -121,7 +121,7 @@ int diffweight(const char *na,const char *nb)
 			//if(t[i-1] == s[j-1])
 			if((ed = nifsame(nia,i-1,nib,j-1)) > 0)
 			{
-				matrix[i][j] = matrix[i-1][j-1] + (ed == 1);
+				matrix[i][j] = matrix[i-1][j-1] + (ed == 2);
 			}else{
 				matrix[i][j] = _MIN(matrix[i][j-1] + 2, // len of a
 					matrix[i-1][j] + 2, // len of b 
