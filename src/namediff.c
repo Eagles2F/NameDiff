@@ -85,6 +85,7 @@ int editDistanceT(const char *cs1,int s1len,const char * cs2,int s2len,int thres
 
 int nifsame(NameInfo a,int offa,NameInfo b,int offb)
 {
+	if(a.abf[offa] || b.abf[offb]) return a.part[offa][0] == b.part[offb][0];
 	char *s1 = a.part[offa];
 	char *s2 = b.part[offb];
 	int la = strlen(s1);
