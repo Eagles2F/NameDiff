@@ -90,8 +90,10 @@ int nifsame(NameInfo a,int offa,NameInfo b,int offb)
 	char *s2 = b.part[offb];
 	int la = strlen(s1);
 	int lb = strlen(s2);
-	int th = (la > lb ? lb : la) * 0.1;
-	if(editDistanceT(s1,la,s2,lb,th) == -1) return 0;
+	int th = (la > lb ? lb : la) * 0.2;
+	int ed ;
+	if((ed = editDistanceT(s1,la,s2,lb,th)) == -1) return 0;
+	else if(ed == 0 ) return 2;
 	else return 1;
 }
 
@@ -105,6 +107,7 @@ int diffweight(const char *na,const char *nb)
 	int matrix[a][b];// distance matrix
 	int i;
 	int j;
+	int ed;
 	for(i = 0 ; i < a ; i ++)
 	{
 		memset(matrix[i],0,b*sizeof(int));
@@ -116,9 +119,9 @@ int diffweight(const char *na,const char *nb)
 		for(j = 1 ; j < b ; j ++)
 		{
 			//if(t[i-1] == s[j-1])
-			if(nifsame(nia,i-1,nib,j-1))
+			if((ed = nifsame(nia,i-1,nib,j-1)) > 0)
 			{
-				matrix[i][j] = matrix[i-1][j-1];
+				matrix[i][j] = matrix[i-1][j-1] + (ed == 1);
 			}else{
 				matrix[i][j] = _MIN(matrix[i][j-1] + 1, // len of a
 					matrix[i-1][j] + 1, // len of b 
