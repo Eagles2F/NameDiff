@@ -24,12 +24,12 @@ NameInfo nameparse(const char *str)
 	{
 		if(isch(str[i]))
 		{
-			ni.part[len][j] = str[i];
+			ni.part[ni.len][j] = str[i];
 			j++;
 		}else if(j>0)
 		{
-			ni.part[len][j] = '\0';
-			ni.abf[len] = j == 1 ;
+			ni.part[ni.len][j] = '\0';
+			ni.abf[ni.len] = (j == 1);
 			ni.len++;
 			j = 0;
 		}
