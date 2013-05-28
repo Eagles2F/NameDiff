@@ -121,7 +121,7 @@ int diffweight(const char *na,const char *nb)
 			//if(t[i-1] == s[j-1])
 			if((ed = nifsame(nia,i-1,nib,j-1)) > 0)
 			{
-				matrix[i][j] = matrix[i-1][j-1] + ed == 1;
+				matrix[i][j] = matrix[i-1][j-1] + (ed == 1);
 			}else{
 				matrix[i][j] = _MIN(matrix[i][j-1] + 1, // len of a
 					matrix[i-1][j] + 1, // len of b 

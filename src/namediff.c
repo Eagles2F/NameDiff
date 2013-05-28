@@ -123,9 +123,9 @@ int diffweight(const char *na,const char *nb)
 			{
 				matrix[i][j] = matrix[i-1][j-1] + (ed == 1);
 			}else{
-				matrix[i][j] = _MIN(matrix[i][j-1] + 1, // len of a
-					matrix[i-1][j] + 1, // len of b 
-					matrix[i-1][j-1] + 1); // substitute cost
+				matrix[i][j] = _MIN(matrix[i][j-1] + 2, // len of a
+					matrix[i-1][j] + 2, // len of b 
+					matrix[i-1][j-1] + 2); // substitute cost
 			}
 		}
 	}
