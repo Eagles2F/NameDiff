@@ -29,7 +29,7 @@ NameInfo nameparse(const char *str)
 		}else if(j>0)
 		{
 			ni.part[len][j] = '\0';
-			ni.abf[len] = j == 1 ;
+			ni.abf[len] = (j == 1);
 			ni.len++;
 			j = 0;
 		}
