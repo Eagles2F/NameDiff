@@ -90,7 +90,7 @@ int nifsame(NameInfo a,int offa,NameInfo b,int offb)
 	char *s2 = b.part[offb];
 	int la = strlen(s1);
 	int lb = strlen(s2);
-	int th = (la > lb ? lb : la) * 0.2;
+	int th = (la > lb ? lb : la) * 0.1;
 	if(editDistanceT(s1,la,s2,lb,th) == -1) return 0;
 	else return 1;
 }
