@@ -51,11 +51,10 @@ int diffweight(const char *na,const char *nb)
 	NameInfo nib = nameparse(nb);
 	
 	for(int i=0;i<nia.len;i++)
-		printf("[%s][%d]\n",nia.part[i],nia.abf[i]);
+		printf("[%s][%d]",nia.part[i],nia.abf[i]);
 	
-	printf("\n");
 	for(int i=0;i<nia.len;i++)
-		printf("[%s][%d]\n",nib.part[i],nib.abf[i]);	
+		printf("[%s][%d]",nib.part[i],nib.abf[i]);	
 	
 	
 	return 0;
